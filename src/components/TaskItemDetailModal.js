@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useDispatch } from 'react-redux';
 import classes from './TaskItemDetailModal.module.css';
+import { closeModal } from '../store/ui-slice';
 
 const Backdrop = () => {
-  return <div className={classes.backdrop}></div>;
+  const dispatch = useDispatch();
+
+  const closeModalHandler = () => {
+    dispatch(closeModal());
+  };
+
+  return <div className={classes.backdrop} onClick={closeModalHandler}></div>;
 };
 
 const Modal = () => {
+  const dispatch = useDispatch();
+
+  const closeModalHandler = () => {
+    dispatch(closeModal());
+  };
+
   return (
     <section className={classes.modal}>
       <p>Updated At: 2022-03-31T14:46:27.534Z</p>
@@ -63,6 +77,7 @@ const Modal = () => {
       </div>
 
       <button>SELECTION OVER</button>
+      <button onClick={closeModalHandler}>CLOSE</button>
     </section>
   );
 };
