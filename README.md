@@ -1,3 +1,6 @@
+# Website
+You can check out the website here: https://ayarmkt.github.io/aya-takamura-takehome-exercise/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
