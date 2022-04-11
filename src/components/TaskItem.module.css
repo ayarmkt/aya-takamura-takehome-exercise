@@ -2,15 +2,23 @@
 .info {
   line-height: 1.5;
   display: grid;
-  grid-template-columns: 10vw 1.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr;
+  border-bottom: 1px solid var(--lightgray);
+  background-color: white;
 }
 
 .info:hover {
   background-color: #f1f1f1;
+  cursor: pointer;
 }
 
 .infoDetails {
-  padding: 0 1vw;
+  padding: 15px 10px;
+}
+
+/* ICON */
+.icon {
+  align-self: center;
 }
 
 /* STATUS */

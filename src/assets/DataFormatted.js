@@ -7,7 +7,7 @@ const DataFormatted = (chosenTab) => {
       usedData = jsonData;
       break;
 
-    case 'Closed':
+    case 'Closed Tasks':
       usedData = jsonData.filter((info) => info.selection.status === 'closed');
       break;
 
