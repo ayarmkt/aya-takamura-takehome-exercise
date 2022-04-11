@@ -18,7 +18,7 @@ const TaskItem = ({ chosenTab }) => {
         <div className={classes.infoDetails}>{target}</div>
         <div className={`${classes.infoDetails} ${statusClass}`}>{status}</div>
         <div className={classes.infoDetails}>{deadline}</div>
-        <MdModeEditOutline />
+        <MdModeEditOutline className={classes.icon} size='25px' />
       </section>
     );
   });

@@ -1,7 +1,7 @@
 :root {
   --blue: rgb(54, 129, 238);
   --lightblue: rgb(235, 242, 254);
-  --gray: rgb(116, 122, 135);
+  --gray: rgb(77, 79, 85);
   --lightgray: rgb(175, 178, 188);
   --text-regular: 16px;
 }
@@ -15,6 +15,5 @@
 
 html {
   color: var(--gray);
-  font-size: 18px;
-  background-color: var(--lightblue);
+  font-size: var(--text-regular);
 }

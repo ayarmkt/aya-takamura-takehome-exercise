@@ -1,16 +1,18 @@
 .container {
-  margin: 20px 50px;
-  width: auto;
+  padding: 20px 50px;
+  width: 100vw;
 }
 
 h1 {
   color: var(--blue);
   margin-bottom: 20px;
+  font-size: 60px;
 }
 
 /* TAB */
 .tab {
   overflow: hidden;
+  border-bottom: 1px solid var(--lightgray);
 }
 
 .tabLinks {
@@ -23,7 +25,7 @@ h1 {
   transition: 0.3s;
   text-align: left;
   font-size: var(--text-regular);
-  font-weight: 1000;
+  font-weight: bold;
   color: var(--gray);
   width: auto;
   border-bottom: 3px solid transparent;
@@ -31,19 +33,17 @@ h1 {
 
 .tabLinks:hover {
   color: var(--blue);
-  font-weight: 800;
 }
 
 .tabLinks.active {
   color: var(--blue);
-  font-weight: 800;
   border-bottom: 3px solid var(--blue);
   overflow: hidden;
 }
 
 /* CONTENT */
 .content {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .content-items {
@@ -61,6 +61,5 @@ h1 {
 }
 
 .label {
-  font-weight: 500;
   line-height: 1.5;
 }

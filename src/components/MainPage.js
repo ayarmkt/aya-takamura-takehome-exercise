@@ -22,35 +22,37 @@ const MainPage = () => {
 
   return (
     <div className={classes.container}>
-      <h1>Start the Selection</h1>
+      <div className={classes.header}>
+        <h1>Start the Selection</h1>
 
-      <div className={classes.tab}>
-        <button
-          className={`${classes.tabLinks} ${
-            chosenTab === 'All Tasks' ? classes.active : ''
-          }`}
-          onClick={tabClickHandler}
-        >
-          All Tasks
-        </button>
+        <div className={classes.tab}>
+          <button
+            className={`${classes.tabLinks} ${
+              chosenTab === 'All Tasks' ? classes.active : ''
+            }`}
+            onClick={tabClickHandler}
+          >
+            All Tasks
+          </button>
 
-        <button
-          className={`${classes.tabLinks} ${
-            chosenTab === 'Closed Tasks' ? classes.active : ''
-          }`}
-          onClick={tabClickHandler}
-        >
-          Closed Tasks
-        </button>
+          <button
+            className={`${classes.tabLinks} ${
+              chosenTab === 'Closed Tasks' ? classes.active : ''
+            }`}
+            onClick={tabClickHandler}
+          >
+            Closed Tasks
+          </button>
 
-        <button
-          className={`${classes.tabLinks} ${
-            chosenTab === 'Close to Deadline' ? classes.active : ''
-          }`}
-          onClick={tabClickHandler}
-        >
-          Close to Deadline
-        </button>
+          <button
+            className={`${classes.tabLinks} ${
+              chosenTab === 'Close to Deadline' ? classes.active : ''
+            }`}
+            onClick={tabClickHandler}
+          >
+            Close to Deadline
+          </button>
+        </div>
       </div>
 
       <div className={classes.content}>
