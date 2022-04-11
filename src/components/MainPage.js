@@ -7,57 +7,59 @@ const MainPage = () => {
 
   const label = (
     <div className={classes.labels}>
-      <div className={classes.label}>Action</div>
       <div className={classes.label}>Company Name</div>
       <div className={classes.label}>Target</div>
       <div className={classes.label}>Status</div>
       <div className={classes.label}>Deadline</div>
+      <div className={classes.label}>Action</div>
     </div>
   );
 
-  return (
-    <React.Fragment>
-      <h1>Selection</h1>
-      <section className={classes.container}>
-        <div className={classes.tab}>
-          <button
-            className={`${classes.tabLinks} ${
-              chosenTab === 'All Tasks' ? classes.active : ''
-            }`}
-            onClick={() => {
-              setChosenTab('All Tasks');
-            }}
-          >
-            All Tasks
-          </button>
+  const tabClickHandler = (e) => {
+    e.preventDefault();
+    setChosenTab(e.target.textContent);
+  };
 
-          <button
-            className={`${classes.tabLinks} ${
-              chosenTab === 'Closed' ? classes.active : ''
-            }`}
-            onClick={() => {
-              setChosenTab('Closed');
-            }}
-          >
-            Closed Tasks
-          </button>
-          <button
-            className={`${classes.tabLinks} ${
-              chosenTab === 'Close to Deadline' ? classes.active : ''
-            }`}
-            onClick={() => {
-              setChosenTab('Close to Deadline');
-            }}
-          >
-            Close to Deadline
-          </button>
-        </div>
-        <section className={classes.content}>
-          <div>{label}</div>
+  return (
+    <div className={classes.container}>
+      <h1>Start the Selection</h1>
+
+      <div className={classes.tab}>
+        <button
+          className={`${classes.tabLinks} ${
+            chosenTab === 'All Tasks' ? classes.active : ''
+          }`}
+          onClick={tabClickHandler}
+        >
+          All Tasks
+        </button>
+
+        <button
+          className={`${classes.tabLinks} ${
+            chosenTab === 'Closed Tasks' ? classes.active : ''
+          }`}
+          onClick={tabClickHandler}
+        >
+          Closed Tasks
+        </button>
+
+        <button
+          className={`${classes.tabLinks} ${
+            chosenTab === 'Close to Deadline' ? classes.active : ''
+          }`}
+          onClick={tabClickHandler}
+        >
+          Close to Deadline
+        </button>
+      </div>
+
+      <div className={classes.content}>
+        <div>{label}</div>
+        <div className={classes['content-items']}>
           <TaskItem chosenTab={chosenTab} />
-        </section>
-      </section>
-    </React.Fragment>
+        </div>
+      </div>
+    </div>
   );
 };
 

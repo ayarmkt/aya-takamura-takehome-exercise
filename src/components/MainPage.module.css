@@ -1,47 +1,63 @@
-/* CONTAINER */
 .container {
-  margin: 0 10px;
+  margin: 20px 50px;
+  width: auto;
 }
 
-/* CONTENT */
-.content {
-  border: 1px solid #ccc;
-  padding: 6px 12px;
-  border-top: none;
+h1 {
+  color: var(--blue);
+  margin-bottom: 20px;
 }
 
 /* TAB */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
 }
 
-.tab button {
+.tabLinks {
   background-color: inherit;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 10px 16px;
   transition: 0.3s;
+  text-align: left;
+  font-size: var(--text-regular);
+  font-weight: 1000;
+  color: var(--gray);
+  width: auto;
+  border-bottom: 3px solid transparent;
 }
 
-.tab button:hover {
-  background-color: darkgray;
+.tabLinks:hover {
+  color: var(--blue);
+  font-weight: 800;
 }
 
-.tab button.active {
-  background-color: darkgray;
+.tabLinks.active {
+  color: var(--blue);
+  font-weight: 800;
+  border-bottom: 3px solid var(--blue);
+  overflow: hidden;
+}
+
+/* CONTENT */
+.content {
+  padding-top: 60px;
+}
+
+.content-items {
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
 }
 
 /* LABEL */
 .labels {
   overflow: hidden;
-  border-bottom: 3px solid darkgray;
   position: relative;
   display: grid;
-  grid-template-columns: 10vw 1.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr;
+  padding-left: 10px;
 }
 
 .label {
