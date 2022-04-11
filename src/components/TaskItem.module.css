@@ -1,0 +1,23 @@
+/* TASK INFO */
+.info {
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 10vw 1.5fr 1fr 1fr 1.5fr;
+}
+
+.info:hover {
+  background-color: #f1f1f1;
+}
+
+.infoDetails {
+  padding: 0 1vw;
+}
+
+/* STATUS */
+.status-closed {
+  color: red;
+}
+
+.status-open {
+  color: blue;
+}

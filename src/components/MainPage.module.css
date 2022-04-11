@@ -1,0 +1,50 @@
+/* CONTAINER */
+.container {
+  margin: 0 10px;
+}
+
+/* CONTENT */
+.content {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+/* TAB */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: darkgray;
+}
+
+.tab button.active {
+  background-color: darkgray;
+}
+
+/* LABEL */
+.labels {
+  overflow: hidden;
+  border-bottom: 3px solid darkgray;
+  position: relative;
+  display: grid;
+  grid-template-columns: 10vw 1.5fr 1fr 1fr 1.5fr;
+}
+
+.label {
+  font-weight: 500;
+  line-height: 1.5;
+}
