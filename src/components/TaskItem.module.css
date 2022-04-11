@@ -3,12 +3,21 @@
   line-height: 1.5;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr;
-  border-bottom: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--gray);
+  /* background-color: white; */
+}
+
+.info:nth-child(even) {
   background-color: white;
 }
 
+.info:nth-child(odd) {
+  background-color: var(--lightblue);
+}
+
 .info:hover {
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  background-color: var(--lightgray);
   cursor: pointer;
 }
 

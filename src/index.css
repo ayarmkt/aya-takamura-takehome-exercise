@@ -1,8 +1,9 @@
 :root {
   --blue: rgb(54, 129, 238);
-  --lightblue: rgb(235, 242, 254);
-  --gray: rgb(77, 79, 85);
-  --lightgray: rgb(175, 178, 188);
+  --lightblue: rgb(241, 243, 248);
+  --darkgray: rgb(77, 79, 85);
+  --gray: rgb(175, 178, 188);
+  --lightgray: rgb(241, 241, 241);
   --text-regular: 16px;
 }
 
@@ -14,6 +15,6 @@
 }
 
 html {
-  color: var(--gray);
+  color: var(--darkgray);
   font-size: var(--text-regular);
 }

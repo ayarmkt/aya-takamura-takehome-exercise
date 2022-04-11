@@ -1,6 +1,8 @@
 .container {
   padding: 20px 50px;
   width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
@@ -12,7 +14,7 @@ h1 {
 /* TAB */
 .tab {
   overflow: hidden;
-  border-bottom: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--gray);
 }
 
 .tabLinks {
@@ -26,7 +28,7 @@ h1 {
   text-align: left;
   font-size: var(--text-regular);
   font-weight: bold;
-  color: var(--gray);
+  color: var(--darkgray);
   width: auto;
   border-bottom: 3px solid transparent;
 }
@@ -47,8 +49,10 @@ h1 {
 }
 
 .content-items {
-  border: 1px solid var(--lightgray);
+  border: 1px solid var(--gray);
   border-radius: 5px;
+  height: 65vh;
+  overflow: scroll;
 }
 
 /* LABEL */
