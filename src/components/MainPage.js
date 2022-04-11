@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './MainPage.module.css';
 import TaskItem from './TaskItem';
+import { changeSelectedTab } from '../store/ui-slice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const MainPage = () => {
-  const [chosenTab, setChosenTab] = useState('All Tasks');
+  const dispatch = useDispatch();
+  const { selectedTab } = useSelector((state) => state.ui);
 
   const label = (
     <div className={classes.labels}>
@@ -17,7 +20,7 @@ const MainPage = () => {
 
   const tabClickHandler = (e) => {
     e.preventDefault();
-    setChosenTab(e.target.textContent);
+    dispatch(changeSelectedTab(e.target.textContent));
   };
 
   return (
@@ -28,7 +31,7 @@ const MainPage = () => {
         <div className={classes.tab}>
           <button
             className={`${classes.tabLinks} ${
-              chosenTab === 'All Tasks' ? classes.active : ''
+              selectedTab === 'All Tasks' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
@@ -37,7 +40,7 @@ const MainPage = () => {
 
           <button
             className={`${classes.tabLinks} ${
-              chosenTab === 'Closed Tasks' ? classes.active : ''
+              selectedTab === 'Closed Tasks' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
@@ -46,7 +49,7 @@ const MainPage = () => {
 
           <button
             className={`${classes.tabLinks} ${
-              chosenTab === 'Close to Deadline' ? classes.active : ''
+              selectedTab === 'Close to Deadline' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
@@ -58,7 +61,7 @@ const MainPage = () => {
       <div className={classes.content}>
         <div>{label}</div>
         <div className={classes['content-items']}>
-          <TaskItem chosenTab={chosenTab} />
+          <TaskItem />
         </div>
       </div>
     </div>

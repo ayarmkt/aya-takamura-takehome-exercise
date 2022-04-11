@@ -1,8 +1,12 @@
+import { useSelector } from 'react-redux';
+
 const jsonData = require('./tasks.json');
 
-const DataFormatted = (chosenTab) => {
+const DataFormatted = () => {
+  const { selectedTab } = useSelector((state) => state.ui);
+
   let usedData;
-  switch (chosenTab) {
+  switch (selectedTab) {
     case 'All Tasks':
       usedData = jsonData;
       break;

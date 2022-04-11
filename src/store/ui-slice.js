@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialUIState = {
   modalOpen: false,
+  selectedTab: 'All Tasks',
 };
 
 const uiSlice = createSlice({
@@ -14,8 +15,11 @@ const uiSlice = createSlice({
     closeModal(state) {
       state.modalOpen = false;
     },
+    changeSelectedTab(state, action) {
+      state.selectedTab = action.payload;
+    },
   },
 });
 
 export default uiSlice.reducer;
-export const { openModal, closeModal } = uiSlice.actions;
+export const { openModal, closeModal, changeSelectedTab } = uiSlice.actions;

@@ -1,14 +1,15 @@
 import classes from './TaskItem.module.css';
 import DataFormatted from '../assets/DataFormatted';
 import { MdModeEditOutline } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 //import uiSlice from '../store/ui-slice';
 import { openModal } from '../store/ui-slice';
 
-const TaskItem = ({ chosenTab }) => {
+const TaskItem = () => {
   const dispatch = useDispatch();
+  const { selectedTab } = useSelector((state) => state.ui);
 
-  return DataFormatted(chosenTab).map((info) => {
+  return DataFormatted(selectedTab).map((info) => {
     const companyName = info.company.name;
     const { target } = info.selection;
     const { status } = info.selection;
