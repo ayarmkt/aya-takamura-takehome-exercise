@@ -1,5 +1,5 @@
 # Website
-You can check out the website here: 
+You can check out the website here: https://ayarmkt.github.io/aya-takamura-takehome-exercise/
 
 # Getting Started with Create React App
 
