@@ -1,44 +1,15 @@
 import classes from './Filter.module.css';
 //import jsonData from '../';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import sortData from '../utils/sort-data';
-import React, { useEffect, useState } from 'react';
-import { setDisplayedTasks } from '../store/task-slice';
+import React, { useState } from 'react';
+//import { setDisplayedTasks } from '../store/task-slice';
 
-const jsonData = require('../assets/tasks.json');
-
-const getTypeOfTasks = (selectedTab) => {
-  return [
-    ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
-  ];
-};
+//const jsonData = require('../assets/tasks.json');
 
 const Filter = () => {
   //const dispatch = useDispatch();
-  const { selectedTab } = useSelector((state) => state.ui);
-  const { displayedTasks } = useSelector((state) => state.task);
-
-  const [filterIsOpen, setFilterIsOpen] = useState(false);
-  //const [isChecked, setIsChecked] = useState(true);
-  const [selectedFilter, setSelectedFilter] = useState([]);
-
-  const openFilterHandler = () => {
-    setFilterIsOpen((prev) => !prev);
-    console.log(filterIsOpen);
-  };
-
-  const checkboxHandler = (e) => {
-    console.log('checkboxHandler');
-    console.log('e.target.checked', e.target.checked);
-
-    if (e.target.checked) {
-      setSelectedFilter([...selectedFilter, e.target.value]);
-    } else {
-      setSelectedFilter(
-        selectedFilter.filter((filter) => filter !== e.target.value)
-      );
-    }
-  };
+  //const { displayedTasks } = useSelector((state) => state.task);
 
   //★★★
   // useEffect(() => {
@@ -89,6 +60,35 @@ const Filter = () => {
   //   });
   //   dispatch(setDisplayedTasks(newData));
   // };
+
+  const { selectedTab } = useSelector((state) => state.ui);
+  const [filterIsOpen, setFilterIsOpen] = useState(false);
+  //const [isChecked, setIsChecked] = useState(true);
+  const [selectedFilter, setSelectedFilter] = useState([]);
+
+  const openFilterHandler = () => {
+    setFilterIsOpen((prev) => !prev);
+    console.log(filterIsOpen);
+  };
+
+  const getTypeOfTasks = () => {
+    return [
+      ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
+    ];
+  };
+
+  const checkboxHandler = (e) => {
+    console.log('checkboxHandler');
+    console.log('e.target.checked', e.target.checked);
+
+    if (e.target.checked) {
+      setSelectedFilter([...selectedFilter, e.target.value]);
+    } else {
+      setSelectedFilter(
+        selectedFilter.filter((filter) => filter !== e.target.value)
+      );
+    }
+  };
 
   const uniqueTarget = getTypeOfTasks().map((target) => (
     <React.Fragment>
