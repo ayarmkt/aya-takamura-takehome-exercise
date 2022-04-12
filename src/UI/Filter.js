@@ -1,15 +1,14 @@
 import classes from './Filter.module.css';
-//import jsonData from '../';
-import { useSelector } from 'react-redux';
-import sortData from '../utils/sort-data';
+import jsonData from '../assets/tasks.json';
+import { useSelector, useDispatch } from 'react-redux';
+//import sortData from '../utils/sort-data';
+import { sortData } from '../store/task-slice';
 import React, { useState } from 'react';
 //import { setDisplayedTasks } from '../store/task-slice';
 
 //const jsonData = require('../assets/tasks.json');
 
 const Filter = () => {
-  //const dispatch = useDispatch();
-  //const { displayedTasks } = useSelector((state) => state.task);
   //const [selectedFilter, setSelectedFilter] = useState([]);
 
   // const checkboxChangeHandler = (e) => {
@@ -40,13 +39,18 @@ const Filter = () => {
   //   dispatch(setDisplayedTasks(newData));
   // };
 
+  const dispatch = useDispatch();
+  const { displayedTasks } = useSelector((state) => state.task);
   const { selectedTab } = useSelector((state) => state.ui);
   const [filterIsOpen, setFilterIsOpen] = useState(false);
 
   const getTypeOfTasks = () => {
-    return [
-      ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
-    ];
+    // return [
+    //   ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
+    // ];
+    //dispatch(sortData(selectedTab);
+    //console.log(jsonData);
+    return [...new Set(jsonData.map((task) => task.selection.target))];
   };
 
   const openFilterHandler = () => {

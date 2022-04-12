@@ -1,8 +1,9 @@
 import classes from './TabButton.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeSelectedTab } from '../store/ui-slice';
-import { setDisplayedTasks } from '../store/task-slice';
-import sortData from '../utils/sort-data';
+//import { setDisplayedTasks } from '../store/task-slice';
+//import sortData from '../utils/sort-data';
+import { sortData } from '../store/task-slice';
 
 const TabButton = ({ label }) => {
   const dispatch = useDispatch();
@@ -12,7 +13,8 @@ const TabButton = ({ label }) => {
   const tabClickHandler = (e) => {
     e.preventDefault();
     dispatch(changeSelectedTab(e.target.textContent));
-    dispatch(setDisplayedTasks(sortData(e.target.textContent)));
+    dispatch(sortData(e.target.textContent));
+    //dispatch(setDisplayedTasks(sortedData));
   };
 
   return (
