@@ -7,7 +7,7 @@ import sortData from '../utils/sort-data';
 const TabButton = ({ label }) => {
   const dispatch = useDispatch();
   const { selectedTab } = useSelector((state) => state.ui);
-  const { displayedTasks } = useSelector((state) => state.task);
+  //const { displayedTasks } = useSelector((state) => state.task);
 
   const tabClickHandler = (e) => {
     e.preventDefault();

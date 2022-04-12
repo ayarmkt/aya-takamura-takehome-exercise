@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classes from './MainPage.module.css';
 import TaskItem from './TaskItem';
 //import { changeSelectedTab } from '../store/ui-slice';
