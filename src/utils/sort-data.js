@@ -1,10 +1,8 @@
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
-const jsonData = require('./tasks.json');
+const jsonData = require('../assets/tasks.json');
 
-const DataFormatted = () => {
-  const { selectedTab } = useSelector((state) => state.ui);
-
+const sortData = (selectedTab) => {
   let usedData;
   switch (selectedTab) {
     case 'All Tasks':
@@ -40,4 +38,4 @@ const DataFormatted = () => {
   return usedData;
 };
 
-export default DataFormatted;
+export default sortData;

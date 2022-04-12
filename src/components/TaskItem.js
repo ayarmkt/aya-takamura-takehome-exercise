@@ -1,16 +1,16 @@
 import classes from './TaskItem.module.css';
-import DataFormatted from '../assets/DataFormatted';
+import sortData from '../utils/sort-data';
 import { MdModeEditOutline } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 //import uiSlice from '../store/ui-slice';
 import { openModal } from '../store/ui-slice';
 import { storeSelectedTask } from '../store/task-slice';
 
 const TaskItem = () => {
   const dispatch = useDispatch();
-  //const { selectedTab } = useSelector((state) => state.ui);
+  const { selectedTab } = useSelector((state) => state.ui);
 
-  return DataFormatted().map((info) => {
+  return sortData(selectedTab).map((info) => {
     const companyName = info.company.name;
     const { target } = info.selection;
     const { status } = info.selection;
