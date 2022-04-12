@@ -37,44 +37,84 @@ const Modal = () => {
 
   return (
     <section className={classes.modal}>
-      <p>Updated At: {formatDate(selectedTask.updatedAt)}</p>
-
       <div className={classes['company-info']}>
         <img src={selectedTask.company.pictureURL} alt='company' />
-        <p className={classes['company-name']}>{selectedTask.company.name}</p>
-        <p>
-          Address: {selectedTask.details.postalCode}{' '}
-          {selectedTask.details.address}
-        </p>
+        <div className={classes['company-info-text']}>
+          <p className={classes['company-name']}>{selectedTask.company.name}</p>
+          <p className={classes.address}>
+            Address:
+            {selectedTask.details.address}
+          </p>
+        </div>
       </div>
 
-      <div className={classes.details}>
-        <p>Job Type: {selectedTask.details.jobType}</p>
-        <p>Objective: {selectedTask.details.objective}</p>
-        <p>Private Note: {selectedTask.details.privateNote}</p>
-        <p>
-          Additional Informations: {selectedTask.details.additionalInformations}
-        </p>
-        <p>Applicants: {selectedTask.details.applicants}</p>
-        <p>Job Type: {selectedTask.details.jobType}</p>
+      <div className={classes.additionalInfo}>
+        <div className={classes.details}>
+          <p>
+            <span>Job Type:</span> {selectedTask.details.jobType}
+          </p>
+          <p>
+            <span>Objective:</span> {selectedTask.details.objective}
+          </p>
+          <p>
+            <span>Private Note:</span> {selectedTask.details.privateNote}
+          </p>
+          <p>
+            <span>Additional Informations:</span>
+            {selectedTask.details.additionalInformations}
+          </p>
+          <p>
+            <span>Applicants:</span> {selectedTask.details.applicants}
+          </p>
+          <p>
+            <span>Job Type:</span> {selectedTask.details.jobType}
+          </p>
 
-        <p>Team: {selectedTask.details.team}</p>
-        <p>Required Documents: {selectedTask.details.requiredDocuments}</p>
-      </div>
-
-      <div className={classes.selection}>
-        <p>Status: {selectedTask.selection.status}</p>
-        <p>Target: {selectedTask.selection.target}</p>
-        <p>Comment: {selectedTask.selection.comment}</p>
-        <p>isVisibleForSiders: {selectedTask.selection.isVisibleForSiders}</p>
-        <p>Private Until: {selectedTask.selection.privateUntil}</p>
-        <p>is PreSelection: {selectedTask.selection.isPreselection}</p>
+          <p>
+            <span>Team:</span> {selectedTask.details.team}
+          </p>
+          <p>
+            <span>Required Documents:</span>
+            {selectedTask.details.requiredDocuments}
+          </p>
+        </div>
+        <div className={classes.selection}>
+          <p>
+            <span>Status:</span> {selectedTask.selection.status}
+          </p>
+          <p>
+            <span>Target:</span> {selectedTask.selection.target}
+          </p>
+          <p>
+            <span>Comment:</span> {selectedTask.selection.comment}
+          </p>
+          <p>
+            <span>isVisibleForSiders:</span>{' '}
+            {selectedTask.selection.isVisibleForSiders}
+          </p>
+          <p>
+            <span>Private Until:</span>{' '}
+            {formatDate(selectedTask.selection.privateUntil)}
+          </p>
+          <p>
+            <span>is PreSelection:</span>{' '}
+            {selectedTask.selection.isPreselection}
+          </p>
+        </div>
       </div>
 
       <div className={classes.shifts}>{shiftsList}</div>
 
-      <button>SELECTION OVER</button>
-      <button onClick={closeModalHandler}>CLOSE</button>
+      <div className={classes.action}>
+        <button className={classes.validate}>SELECTION OVER</button>
+        <button className={classes.close} onClick={closeModalHandler}>
+          CLOSE
+        </button>
+      </div>
+
+      <p className={classes.update}>
+        Updated At: {formatDate(selectedTask.updatedAt)}
+      </p>
     </section>
   );
 };
