@@ -3,6 +3,7 @@ import { MdModeEditOutline } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../store/ui-slice';
 import { storeSelectedTask } from '../store/task-slice';
+import formatDate from '../utils/format-date';
 
 const TaskItem = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const TaskItem = () => {
       dispatch(openModal());
     };
 
+    formatDate(deadline);
+
     return (
       <section
         className={classes.info}
@@ -31,7 +34,7 @@ const TaskItem = () => {
         <div className={classes.infoDetails}>{companyName}</div>
         <div className={classes.infoDetails}>{target}</div>
         <div className={`${classes.infoDetails} ${statusClass}`}>{status}</div>
-        <div className={classes.infoDetails}>{deadline}</div>
+        <div className={classes.infoDetails}>{formatDate(deadline)}</div>
         <MdModeEditOutline className={classes.icon} size='25px' />
       </section>
     );
