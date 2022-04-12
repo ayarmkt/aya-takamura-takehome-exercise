@@ -1,22 +1,22 @@
 //import { useSelector } from 'react-redux';
 
-const jsonData = require('../assets/tasks.json');
+//const data = require('../assets/tasks.json');
 
-const sortData = (selectedTab) => {
+const sortData = (data, selectedTab) => {
   let usedData;
   switch (selectedTab) {
     case 'All Tasks':
-      usedData = jsonData;
+      usedData = data;
       //usedData = tasks;
       break;
 
     case 'Closed Tasks':
-      usedData = jsonData.filter((info) => info.selection.status === 'closed');
+      usedData = data.filter((info) => info.selection.status === 'closed');
       //usedData = tasks.filter((info) => info.selection.status === 'closed');
       break;
 
     case 'Close to Deadline':
-      usedData = [...jsonData].sort((a, b) => {
+      usedData = [...data].sort((a, b) => {
         if (a.selection.privateUntil === null) return 1;
         if (b.selection.privateUntil === null) return -1;
         if (a.selection.privateUntil === b.selection.privateUntil) {
@@ -31,7 +31,7 @@ const sortData = (selectedTab) => {
       break;
 
     default:
-      usedData = jsonData;
+      usedData = data;
       break;
   }
 

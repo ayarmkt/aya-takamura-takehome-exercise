@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-//const jsonData = require('../assets/tasks.json');
+const jsonData = require('../assets/tasks.json');
 
 const initialTaskState = {
-  tasks: null,
+  displayedTasks: jsonData,
   selectedTask: null,
 };
 
@@ -14,8 +14,11 @@ const taskSlice = createSlice({
     storeSelectedTask(state, action) {
       state.selectedTask = action.payload;
     },
+    setDisplayedTasks(state, action) {
+      state.displayedTasks = action.payload;
+    },
   },
 });
 
 export default taskSlice.reducer;
-export const { storeSelectedTask } = taskSlice.actions;
+export const { storeSelectedTask, setDisplayedTasks } = taskSlice.actions;

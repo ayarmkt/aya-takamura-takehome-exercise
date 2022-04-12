@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './MainPage.module.css';
 import TaskItem from './TaskItem';
 //import { changeSelectedTab } from '../store/ui-slice';
 //import { useDispatch, useSelector } from 'react-redux';
 import TabButton from '../UI/TabButton';
+import Filter from '../UI/Filter';
+//import { setDisplayedTasks } from '../store/task-slice';
+//import jsonData from '../assets/tasks.json';
 
 const MainPage = () => {
   //const dispatch = useDispatch();
+  //const { displayedTasks } = useSelector((state) => state.task);
   //const { selectedTab } = useSelector((state) => state.ui);
+
+  // useEffect(() => {
+  //   dispatch(setDisplayedTasks(jsonData));
+  //   console.log(jsonData);
+  //   console.log(selectedTab);
+  // }, []);
 
   const label = (
     <div className={classes.labels}>
@@ -26,11 +36,11 @@ const MainPage = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.header}>
-        <h1>Start the Selection</h1>
+      {/* <div className={classes.header}> */}
+      <h1>Start the Selection</h1>
 
-        <div className={classes.tab}>
-          {/* <button
+      <div className={classes.tab}>
+        {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'All Tasks' ? classes.active : ''
             }`}
@@ -39,7 +49,7 @@ const MainPage = () => {
             All Tasks
           </button> */}
 
-          {/* <button
+        {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'Closed Tasks' ? classes.active : ''
             }`}
@@ -48,7 +58,7 @@ const MainPage = () => {
             Closed Tasks
           </button> */}
 
-          {/* <button
+        {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'Close to Deadline' ? classes.active : ''
             }`}
@@ -56,11 +66,13 @@ const MainPage = () => {
           >
             Close to Deadline
           </button> */}
-          <TabButton label='All Tasks' />
-          <TabButton label='Closed Tasks' />
-          <TabButton label='Close to Deadline' />
-        </div>
+        <TabButton label='All Tasks' />
+        <TabButton label='Closed Tasks' />
+        <TabButton label='Close to Deadline' />
       </div>
+
+      <Filter />
+      {/* </div> */}
 
       <div className={classes.content}>
         <div>{label}</div>
