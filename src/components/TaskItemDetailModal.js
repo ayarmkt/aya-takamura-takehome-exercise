@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './TaskItemDetailModal.module.css';
 import { closeModal } from '../store/ui-slice';
+import formatDate from '../utils/format-date';
 
 const Backdrop = () => {
   const dispatch = useDispatch();
@@ -25,8 +26,8 @@ const Modal = () => {
   const shiftsList = selectedTask.shifts.map((shift) => {
     return (
       <div className={classes.shift} key={shift.id}>
-        <p>Start: {shift.start}</p>
-        <p>End: {shift.end}</p>
+        <p>Start: {formatDate(shift.start)}</p>
+        <p>End: {formatDate(shift.end)}</p>
         <p>Slots: {shift.slots}</p>
         <p>filled slots: {shift.filledSlots}</p>
       </div>
@@ -35,7 +36,7 @@ const Modal = () => {
 
   return (
     <section className={classes.modal}>
-      <p>Updated At: {selectedTask.updatedAt}</p>
+      <p>Updated At: {formatDate(selectedTask.updatedAt)}</p>
 
       <div className={classes['company-info']}>
         <img src={selectedTask.company.pictureURL} alt='company' />

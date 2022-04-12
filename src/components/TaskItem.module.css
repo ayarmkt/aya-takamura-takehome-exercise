@@ -2,7 +2,7 @@
 .info {
   line-height: 1.5;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr;
+  grid-template-columns: 4fr 2fr 1.5fr 2fr 1fr;
   border-bottom: 1px solid var(--gray);
 }
 
@@ -26,6 +26,9 @@
 /* ICON */
 .icon {
   align-self: center;
+  justify-self: center;
+  /* border: 1px solid red; */
+  /* margin-left: 10px; */
 }
 
 /* STATUS */
