@@ -1,12 +1,13 @@
 import React from 'react';
 import classes from './MainPage.module.css';
 import TaskItem from './TaskItem';
-import { changeSelectedTab } from '../store/ui-slice';
-import { useDispatch, useSelector } from 'react-redux';
+//import { changeSelectedTab } from '../store/ui-slice';
+//import { useDispatch, useSelector } from 'react-redux';
+import TabButton from '../UI/TabButton';
 
 const MainPage = () => {
-  const dispatch = useDispatch();
-  const { selectedTab } = useSelector((state) => state.ui);
+  //const dispatch = useDispatch();
+  //const { selectedTab } = useSelector((state) => state.ui);
 
   const label = (
     <div className={classes.labels}>
@@ -18,10 +19,10 @@ const MainPage = () => {
     </div>
   );
 
-  const tabClickHandler = (e) => {
-    e.preventDefault();
-    dispatch(changeSelectedTab(e.target.textContent));
-  };
+  // const tabClickHandler = (e) => {
+  //   e.preventDefault();
+  //   dispatch(changeSelectedTab(e.target.textContent));
+  // };
 
   return (
     <div className={classes.container}>
@@ -29,32 +30,35 @@ const MainPage = () => {
         <h1>Start the Selection</h1>
 
         <div className={classes.tab}>
-          <button
+          {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'All Tasks' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
             All Tasks
-          </button>
+          </button> */}
 
-          <button
+          {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'Closed Tasks' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
             Closed Tasks
-          </button>
+          </button> */}
 
-          <button
+          {/* <button
             className={`${classes.tabLinks} ${
               selectedTab === 'Close to Deadline' ? classes.active : ''
             }`}
             onClick={tabClickHandler}
           >
             Close to Deadline
-          </button>
+          </button> */}
+          <TabButton label='All Tasks' />
+          <TabButton label='Closed Tasks' />
+          <TabButton label='Close to Deadline' />
         </div>
       </div>
 

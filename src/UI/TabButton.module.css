@@ -1,0 +1,26 @@
+.tabLinks {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  transition: 0.3s;
+  text-align: left;
+  font-size: var(--text-regular);
+  font-weight: bold;
+  color: var(--darkgray);
+  width: auto;
+  border-bottom: 3px solid transparent;
+  /* border: 1px solid red; */
+}
+
+.tabLinks:hover {
+  color: var(--blue);
+}
+
+.tabLinks.active {
+  color: var(--blue);
+  border-bottom: 3px solid var(--blue);
+  overflow: hidden;
+}
