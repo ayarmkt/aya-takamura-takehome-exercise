@@ -1,19 +1,32 @@
-/* TASK INFO */
 .info {
   line-height: 1.5;
   display: grid;
-  grid-template-columns: 10vw 1.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 3fr 2fr 1fr 1fr 1fr 1fr 2fr 0.5fr;
+  border-bottom: 1px solid var(--gray);
+}
+
+.info:nth-child(even) {
+  background-color: white;
+}
+
+.info:nth-child(odd) {
+  background-color: var(--lightblue);
 }
 
 .info:hover {
-  background-color: #f1f1f1;
+  background-color: var(--lightgray);
+  cursor: pointer;
 }
 
 .infoDetails {
-  padding: 0 1vw;
+  padding: 15px 10px;
 }
 
-/* STATUS */
+.icon {
+  align-self: center;
+  justify-self: center;
+}
+
 .status-closed {
   color: red;
 }
