@@ -18,10 +18,6 @@ h1 {
 }
 
 /* CONTENT */
-.content {
-  /* padding-top: 40px; */
-}
-
 .content-items {
   border: 1px solid var(--gray);
   border-radius: 5px;
