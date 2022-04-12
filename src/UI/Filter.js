@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { filterData } from '../store/task-slice';
 import { setSelectedFilter } from '../store/task-slice';
+import { AiOutlineDown } from 'react-icons/ai';
 
 const getTypeOfTasks = () => {
   return [...new Set(jsonData.map((task) => task.selection.target))];
@@ -30,22 +31,26 @@ const Filter = () => {
   }, [dispatch, selectedFilter]);
 
   const uniqueTarget = getTypeOfTasks().map((target) => (
-    <React.Fragment>
+    <div className={classes['dropdown-item']}>
       <input type='checkbox' value={target} onChange={checkboxHandler} />
       <label>{target}</label>
-    </React.Fragment>
+    </div>
   ));
 
   return (
-    <div className={classes.dropdown}>
-      <div>FILTER BY:</div>
-      <button onClick={openFilterHandler}>TARGET</button>
-      <div
-        className={`${classes['dropdown-content']} ${
-          filterIsOpen ? classes.open : ''
-        }`}
-      >
-        {uniqueTarget}
+    <div className={classes['filter-section']}>
+      <div className={classes.title}>FILTER BY:</div>
+      <div className={classes.dropdown}>
+        <button className={classes.dropbtn} onClick={openFilterHandler}>
+          TARGET <AiOutlineDown className={classes.icon} />
+        </button>
+        <div
+          className={`${classes['dropdown-content']} ${
+            filterIsOpen ? classes.open : ''
+          }`}
+        >
+          {uniqueTarget}
+        </div>
       </div>
     </div>
   );
