@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './TaskItemDetailModal.module.css';
@@ -18,6 +18,7 @@ const Backdrop = () => {
 const Modal = () => {
   const dispatch = useDispatch();
   const { selectedTask } = useSelector((state) => state.task);
+  const [shift, setShift] = useState({ slots: 0, filledSlots: 0 });
 
   const closeModalHandler = () => {
     dispatch(closeModal());

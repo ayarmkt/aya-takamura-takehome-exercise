@@ -10,6 +10,9 @@ const MainPage = () => {
       <div className={classes.label}>Company Name</div>
       <div className={classes.label}>Target</div>
       <div className={classes.label}>Status</div>
+      <div className={classes.label}>Applicants</div>
+      <div className={classes.label}>Shift Slots</div>
+      <div className={classes.label}>Filled Slots</div>
       <div className={classes.label}>Deadline</div>
       <div className={classes.label}>Action</div>
     </div>
