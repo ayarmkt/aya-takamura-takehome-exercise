@@ -1,14 +1,18 @@
-const jsonData = require('./tasks.json');
+//import { useSelector } from 'react-redux';
 
-const DataFormatted = (chosenTab) => {
+const jsonData = require('../assets/tasks.json');
+
+const sortData = (selectedTab) => {
   let usedData;
-  switch (chosenTab) {
+  switch (selectedTab) {
     case 'All Tasks':
       usedData = jsonData;
+      //usedData = tasks;
       break;
 
     case 'Closed Tasks':
       usedData = jsonData.filter((info) => info.selection.status === 'closed');
+      //usedData = tasks.filter((info) => info.selection.status === 'closed');
       break;
 
     case 'Close to Deadline':
@@ -34,4 +38,4 @@ const DataFormatted = (chosenTab) => {
   return usedData;
 };
 
-export default DataFormatted;
+export default sortData;
