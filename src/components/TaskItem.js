@@ -10,7 +10,7 @@ const TaskItem = () => {
   const dispatch = useDispatch();
   //const { selectedTab } = useSelector((state) => state.ui);
   const { displayedTasks } = useSelector((state) => state.task);
-  console.log(displayedTasks);
+  //console.log(displayedTasks);
 
   //the data used here will change depending on the filter
   //sortData(selectedTab).map

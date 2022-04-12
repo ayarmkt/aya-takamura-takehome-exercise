@@ -12,7 +12,7 @@ const TabButton = ({ label }) => {
   const tabClickHandler = (e) => {
     e.preventDefault();
     dispatch(changeSelectedTab(e.target.textContent));
-    dispatch(setDisplayedTasks(sortData(displayedTasks, selectedTab)));
+    dispatch(setDisplayedTasks(sortData(e.target.textContent)));
   };
 
   return (

@@ -11,36 +11,59 @@ const Filter = () => {
   const dispatch = useDispatch();
   const { selectedTab } = useSelector((state) => state.ui);
   const { displayedTasks } = useSelector((state) => state.task);
+
   const [filterIsOpen, setFilterIsOpen] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState([]);
 
   const getTypeOfTasks = () => {
     return [
-      ...new Set(
-        sortData(jsonData, selectedTab).map((task) => task.selection.target)
-      ),
+      ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
     ];
   };
-
-  const filterTasksHandler = (e) => {
-    e.preventDefault();
-    //change from jsonData
-    const newData = sortData(displayedTasks, selectedTab).filter(
-      (task) => task.selection.target === e.target.value
-    );
-    dispatch(setDisplayedTasks(newData));
-  };
-
-  const uniqueTarget = getTypeOfTasks().map((target) => (
-    <React.Fragment>
-      <input type='checkbox' value={target} onClick={filterTasksHandler} />
-      <label>{target}</label>
-    </React.Fragment>
-  ));
 
   const openFilterHandler = () => {
     setFilterIsOpen((prev) => !prev);
     console.log(filterIsOpen);
   };
+
+  // const checkboxChangeHandler = (e) => {
+  //   e.preventDefault();
+  //   e.target.checked = !e.target.checked;
+  //   if (e.target.checked) {
+  //     setSelectedFilter(e.target.value);
+  //   } else {
+  //     setSelectedFilter(
+  //       selectedFilter.filter((filter) => filter !== e.target.value)
+  //     );
+  //   }
+  //   console.log('selectedFilter', selectedFilter);
+  // };
+
+  // const filterTasksHandler = (e) => {
+  //   e.preventDefault();
+
+  //   //need to change filter methods
+  //   const newData = sortData(displayedTasks, selectedTab).filter((task) => {
+  //     for (const filter of selectedFilter) {
+  //       if (task.selection.target === filter) {
+  //         return true;
+  //       }
+  //       return false;
+  //     }
+  //   });
+  //   dispatch(setDisplayedTasks(newData));
+  // };
+
+  const uniqueTarget = getTypeOfTasks().map((target) => (
+    <React.Fragment>
+      <input
+        type='checkbox'
+        value={target}
+        //onChange={(checkboxChangeHandler, filterTasksHandler)}
+      />
+      <label>{target}</label>
+    </React.Fragment>
+  ));
 
   return (
     <div className={classes.dropdown}>
