@@ -4,7 +4,9 @@ const jsonData = require('../assets/tasks.json');
 
 const initialTaskState = {
   displayedTasks: jsonData,
+  tasksWithoutFilter: jsonData,
   selectedTask: null,
+  selectedFilter: [],
 };
 
 const taskSlice = createSlice({
@@ -17,16 +19,28 @@ const taskSlice = createSlice({
     setDisplayedTasks(state, action) {
       state.displayedTasks = action.payload;
     },
+    setSelectedFilter(state, action) {
+      const { checked, value } = action.payload;
+      if (checked) {
+        state.selectedFilter = [...state.selectedFilter, value];
+      } else {
+        state.selectedFilter = state.selectedFilter.filter(
+          (filter) => filter !== value
+        );
+      }
+    },
     sortData(state, action) {
       switch (action.payload) {
         case 'All Tasks':
           state.displayedTasks = jsonData;
+          state.tasksWithoutFilter = state.displayedTasks;
           break;
 
         case 'Closed Tasks':
           state.displayedTasks = jsonData.filter(
             (info) => info.selection.status === 'closed'
           );
+          state.tasksWithoutFilter = state.displayedTasks;
           break;
 
         case 'Close to Deadline':
@@ -42,16 +56,32 @@ const taskSlice = createSlice({
               ? -1
               : 1;
           });
+          state.tasksWithoutFilter = state.displayedTasks;
           break;
 
         default:
           state.displayedTasks = jsonData;
+          state.tasksWithoutFilter = state.displayedTasks;
           break;
       }
+    },
+    filterData(state, action) {
+      state.displayedTasks = state.tasksWithoutFilter.filter((task) => {
+        if (action.payload.length === 0) return true;
+        for (const filter of action.payload) {
+          if (task.selection.target === filter) return true;
+        }
+        return false;
+      });
     },
   },
 });
 
 export default taskSlice.reducer;
-export const { storeSelectedTask, setDisplayedTasks, sortData } =
-  taskSlice.actions;
+export const {
+  storeSelectedTask,
+  setDisplayedTasks,
+  sortData,
+  filterData,
+  setSelectedFilter,
+} = taskSlice.actions;

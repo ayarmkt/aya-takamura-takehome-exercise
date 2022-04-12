@@ -7,7 +7,6 @@ import { storeSelectedTask } from '../store/task-slice';
 const TaskItem = () => {
   const dispatch = useDispatch();
   const { displayedTasks } = useSelector((state) => state.task);
-  //console.log('displayedTasks', displayedTasks);
 
   return displayedTasks.map((task) => {
     const companyName = task.company.name;
