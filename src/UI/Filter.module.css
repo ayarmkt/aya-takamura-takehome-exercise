@@ -1,6 +1,5 @@
 .filter-section {
   display: flex;
-
   align-items: center;
   margin: 2vh 0;
 }
@@ -21,10 +20,8 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
-
   width: auto;
   height: 3vh;
-
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -40,7 +37,6 @@
   position: absolute;
   background-color: #f9f9f9;
   width: 250px;
-
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }

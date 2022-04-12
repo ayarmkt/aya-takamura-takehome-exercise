@@ -1,10 +1,8 @@
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import classes from './Filter.module.css';
 import jsonData from '../assets/tasks.json';
-import { useSelector, useDispatch } from 'react-redux';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { filterData } from '../store/task-slice';
-import { setSelectedFilter } from '../store/task-slice';
+import { filterData, setSelectedFilter } from '../store/task-slice';
 import { AiOutlineDown } from 'react-icons/ai';
 
 const getTypeOfTasks = () => {

@@ -11,13 +11,11 @@ h1 {
   font-size: 50px;
 }
 
-/* TAB */
 .tab {
   overflow: hidden;
   border-bottom: 1px solid var(--gray);
 }
 
-/* CONTENT */
 .content-items {
   border: 1px solid var(--gray);
   border-radius: 5px;
@@ -25,7 +23,6 @@ h1 {
   overflow: scroll;
 }
 
-/* LABEL */
 .labels {
   overflow: hidden;
   position: relative;

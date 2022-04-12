@@ -1,5 +1,4 @@
 import classes from './TaskItem.module.css';
-import { useState } from 'react';
 import { MdModeEditOutline } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../store/ui-slice';
@@ -9,8 +8,6 @@ import formatDate from '../utils/format-date';
 const TaskItem = () => {
   const dispatch = useDispatch();
   const { displayedTasks } = useSelector((state) => state.task);
-  //const [slotsNum, setSlotsNum] = useState(0);
-  //const [filledSlotsNum, setFilledSlotsNum] = useState(0);
 
   return displayedTasks.map((task) => {
     const companyName = task.company.name;
