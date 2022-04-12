@@ -1,1 +1,3 @@
-const filterData = () => {};
+const filterData = (data) => {};
+
+export default filterData;

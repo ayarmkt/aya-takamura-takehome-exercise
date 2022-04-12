@@ -1,19 +1,13 @@
 import classes from './TaskItem.module.css';
-//import sortData from '../utils/sort-data';
 import { MdModeEditOutline } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-//import uiSlice from '../store/ui-slice';
 import { openModal } from '../store/ui-slice';
 import { storeSelectedTask } from '../store/task-slice';
 
 const TaskItem = () => {
   const dispatch = useDispatch();
-  //const { selectedTab } = useSelector((state) => state.ui);
   const { displayedTasks } = useSelector((state) => state.task);
-  //console.log(displayedTasks);
 
-  //the data used here will change depending on the filter
-  //sortData(selectedTab).map
   return displayedTasks.map((task) => {
     const companyName = task.company.name;
     const { target } = task.selection;
