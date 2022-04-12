@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/aya-takamura-takehome-exercise/static/css/main.2933476e.css",
-    "main.js": "/aya-takamura-takehome-exercise/static/js/main.577e9c31.js",
-    "static/js/787.e2ad8011.chunk.js": "/aya-takamura-takehome-exercise/static/js/787.e2ad8011.chunk.js",
+    "main.css": "/aya-takamura-takehome-exercise/static/css/main.8c15e4a2.css",
+    "main.js": "/aya-takamura-takehome-exercise/static/js/main.a94213cb.js",
     "index.html": "/aya-takamura-takehome-exercise/index.html",
-    "main.2933476e.css.map": "/aya-takamura-takehome-exercise/static/css/main.2933476e.css.map",
-    "main.577e9c31.js.map": "/aya-takamura-takehome-exercise/static/js/main.577e9c31.js.map",
-    "787.e2ad8011.chunk.js.map": "/aya-takamura-takehome-exercise/static/js/787.e2ad8011.chunk.js.map"
+    "main.8c15e4a2.css.map": "/aya-takamura-takehome-exercise/static/css/main.8c15e4a2.css.map",
+    "main.a94213cb.js.map": "/aya-takamura-takehome-exercise/static/js/main.a94213cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.2933476e.css",
-    "static/js/main.577e9c31.js"
+    "static/css/main.8c15e4a2.css",
+    "static/js/main.a94213cb.js"
   ]
 }
