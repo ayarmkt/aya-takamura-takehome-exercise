@@ -20,28 +20,17 @@
   z-index: 100;
   overflow: hidden;
   padding: 40px 60px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   display: grid;
   grid-gap: 40px;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto 1fr auto;
 }
 
-/* p {
-  line-height: 1.5;
-} */
-
 .company-info {
   grid-column: 1;
   grid-row: 1;
   display: grid;
   grid-template-columns: auto 1fr;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .company-info img {

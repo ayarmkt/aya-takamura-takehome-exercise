@@ -1,30 +1,16 @@
 import classes from './Filter.module.css';
 //import jsonData from '../';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import sortData from '../utils/sort-data';
 import React, { useState } from 'react';
-import { setDisplayedTasks } from '../store/task-slice';
+//import { setDisplayedTasks } from '../store/task-slice';
 
-const jsonData = require('../assets/tasks.json');
+//const jsonData = require('../assets/tasks.json');
 
 const Filter = () => {
-  const dispatch = useDispatch();
-  const { selectedTab } = useSelector((state) => state.ui);
-  const { displayedTasks } = useSelector((state) => state.task);
-
-  const [filterIsOpen, setFilterIsOpen] = useState(false);
-  const [selectedFilter, setSelectedFilter] = useState([]);
-
-  const getTypeOfTasks = () => {
-    return [
-      ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
-    ];
-  };
-
-  const openFilterHandler = () => {
-    setFilterIsOpen((prev) => !prev);
-    console.log(filterIsOpen);
-  };
+  //const dispatch = useDispatch();
+  //const { displayedTasks } = useSelector((state) => state.task);
+  //const [selectedFilter, setSelectedFilter] = useState([]);
 
   // const checkboxChangeHandler = (e) => {
   //   e.preventDefault();
@@ -53,6 +39,20 @@ const Filter = () => {
   //   });
   //   dispatch(setDisplayedTasks(newData));
   // };
+
+  const { selectedTab } = useSelector((state) => state.ui);
+  const [filterIsOpen, setFilterIsOpen] = useState(false);
+
+  const getTypeOfTasks = () => {
+    return [
+      ...new Set(sortData(selectedTab).map((task) => task.selection.target)),
+    ];
+  };
+
+  const openFilterHandler = () => {
+    setFilterIsOpen((prev) => !prev);
+    console.log(filterIsOpen);
+  };
 
   const uniqueTarget = getTypeOfTasks().map((target) => (
     <React.Fragment>
