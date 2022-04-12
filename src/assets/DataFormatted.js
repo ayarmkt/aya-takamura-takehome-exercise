@@ -9,10 +9,12 @@ const DataFormatted = () => {
   switch (selectedTab) {
     case 'All Tasks':
       usedData = jsonData;
+      //usedData = tasks;
       break;
 
     case 'Closed Tasks':
       usedData = jsonData.filter((info) => info.selection.status === 'closed');
+      //usedData = tasks.filter((info) => info.selection.status === 'closed');
       break;
 
     case 'Close to Deadline':
