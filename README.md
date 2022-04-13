@@ -19,7 +19,7 @@ Platform: GitHub Pages<br>
 - Improve the order of tasks in the "All Tasks" view for more efficient selection. The default order can be sorted by impact.
 - Add various filters such as status, number of workers, etc. Extract the filter button component as a reusable component and update the filterData reducer in the Redux store
 - The modal for task details display can be further improved. The data organization and the usage of a modal view need reconsideration
-- Add functionality to the "SELECTION OVER" button inside the modal to remove selected tasks from the list. New reducer can be added to the Redux store to handle the displayed tasks.
+- Add functionality to the "SELECTION OVER" button inside the modal to remove selected tasks from the list. Add a new reducer to the Redux store to handle the changes in the displayed tasks
 
 ## Getting Started
 1. Fork and then clone this repository
