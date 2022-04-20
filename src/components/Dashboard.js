@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './Dashboard.module.css';
 import { assignmentNeededTasks, closedTasks, readyTasks } from '../data/data';
 //import AssignmentNeeded from './AssignmentNeeded';
 // import Closed from './Closed';
@@ -15,7 +16,7 @@ const Dashboard = () => {
   //   const {} = useCalcShiftsSlots(task, slots);
 
   return (
-    <div>
+    <div className={classes.container}>
       {/* <AssignmentNeeded />
       <TasksNotFilled />
       <Ready />

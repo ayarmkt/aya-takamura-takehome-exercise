@@ -1,5 +1,37 @@
 .container {
+  /* height: auto; */
   display: grid;
   grid-template-columns: 2fr 4fr 3fr 2fr 1fr 1fr 1.5fr;
   border: 1px solid red;
+  padding: 1vh 2vw;
+}
+
+/* COMPANY INFO */
+.companyInfo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  /* grid-gap: 1vw; */
+  border: 1px solid red;
+}
+
+.companyInfo img {
+  width: 3vw;
+  grid-column: 1;
+  grid-row: span 2;
+  border: 1px solid red;
+}
+
+.companyInfo div {
+  padding-left: var(--textPadding);
+}
+
+.jobType {
+  font-weight: var(--bold);
+}
+
+/* ACTION */
+.action {
+  display: flex;
 }

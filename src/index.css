@@ -1,10 +1,14 @@
 :root {
-  --blue: rgb(54, 129, 238);
+  /* --blue: rgb(54, 129, 238);
   --lightblue: rgb(241, 243, 248);
   --darkgray: rgb(77, 79, 85);
   --gray: rgb(175, 178, 188);
   --lightgray: rgb(241, 241, 241);
-  --text-regular: 16px;
+  --text-regular: 16px; */
+  --lightblue: #ebf2fe;
+  --textSize: 16px;
+  --bold: 800;
+  --textPadding: 1vw;
 }
 
 * {
@@ -15,6 +19,12 @@
 }
 
 html {
-  color: var(--darkgray);
-  font-size: var(--text-regular);
+  /* color: var(--darkgray);
+  font-size: var(--text-regular); */
+  background-color: var(--lightblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--textSize);
+  /* font-weight: var(--bold); */
 }

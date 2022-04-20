@@ -18,13 +18,13 @@ const TaskItemContainer = ({ task }) => {
   return (
     <div className={classes.container}>
       <div>3 days</div>
-      <div>
+      <div className={classes.companyInfo}>
         <img
           className={classes.image}
           src={task.company.pictureURL}
           alt={task.company.name}
         />
-        <div>{task.details.jobType}</div>
+        <div className={classes.jobType}>{task.details.jobType}</div>
         <div>{task.company.name}</div>
       </div>
 
@@ -41,7 +41,7 @@ const TaskItemContainer = ({ task }) => {
           : ''}
       </div>
       <div>Selection</div>
-      <div className='action'>
+      <div className={classes.action}>
         <div>Edit</div>
         <div>Close</div>
         <div>Other</div>
